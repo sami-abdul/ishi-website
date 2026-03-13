@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+:root {
+  --color-brand-teal: #0D9488;
+  --color-brand-teal-dark: #0A7A70;
+  --color-brand-teal-deeper: #075E56;
+  --color-brand-teal-light: #14B8A6;
+  --color-brand-gold: #C8A26B;
+  --color-brand-gold-light: #D4B688;
+  --color-brand-gold-dark: #B08E55;
+  --color-brand-cream: #FAF7F2;
+  --color-brand-dark: #1A1A1A;
+  --color-brand-charcoal: #2D2D2D;
+}
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #1A1A1A;
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+  --color-teal: #0D9488;
+  --color-teal-dark: #0A7A70;
+  --color-teal-deeper: #075E56;
+  --color-teal-light: #14B8A6;
+  --color-gold: #C8A26B;
+  --color-gold-light: #D4B688;
+  --color-gold-dark: #B08E55;
+  --color-cream: #FAF7F2;
+  --color-charcoal: #2D2D2D;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: var(--color-brand-teal);
+  color: white;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-brand-teal);
+  outline-offset: 2px;
+}
+
+/* Remove default focus outline for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-gold);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-gold-dark);
+}
+
+/* Animation utilities */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-left {
+  animation: slide-in-left 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-slide-right {
+  animation: slide-in-right 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-float {
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-500 { animation-delay: 500ms; }
+.animation-delay-600 { animation-delay: 600ms; }
+
+/* Gold accent line */
+.gold-line {
+  width: 56px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-brand-gold), var(--color-brand-gold-light));
+}
+
+/* Teal gradient overlay */
+.teal-gradient {
+  background: linear-gradient(135deg, var(--color-brand-teal-deeper) 0%, var(--color-brand-teal) 50%, var(--color-brand-teal-dark) 100%);
+}
+
+/* Gold gradient */
+.gold-gradient {
+  background: linear-gradient(135deg, var(--color-brand-gold-dark) 0%, var(--color-brand-gold) 40%, var(--color-brand-gold-light) 100%);
+}
