@@ -1,0 +1,7 @@
+FROM node:20-bookworm-slim
+RUN npm install -g @openclaw/cli@latest
+RUN mkdir -p /home/node/.openclaw && chown -R node:node /home/node
+USER node
+WORKDIR /home/node
+EXPOSE 18789
+CMD ["openclaw", "gateway", "run"]
